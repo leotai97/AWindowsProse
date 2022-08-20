@@ -1,0 +1,309 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "winres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""winres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_PROSE MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "New Project",                 ID_FILE_NEW
+        MENUITEM "Open Project",                ID_FILE_OPEN
+        MENUITEM "Save Project",                ID_FILE_SAVE
+        MENUITEM SEPARATOR
+        MENUITEM "Exit",                        ID_FILE_EXIT
+    END
+    POPUP "Edit"
+    BEGIN
+        MENUITEM "Add Text Item",               IDB_ADD
+        MENUITEM "Edit Text Item",              IDB_EDIT
+        MENUITEM "Drop Text Item",              IDB_DROP
+        MENUITEM SEPARATOR
+        MENUITEM "Add Language",                ID_EDIT_LANG_ADD
+        MENUITEM "Remove Language",             ID_EDIT_LANG_DROP
+        MENUITEM SEPARATOR
+        MENUITEM "Paste Resource ID List",      ID_EDIT_PASTE
+        MENUITEM "Extract Text From .RC File",  ID_EDIT_EXTRACT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "Single Language Mode",        ID_VIEW_SINGLE_MODE
+        MENUITEM "Dual Language Mode",          ID_VIEW_DUAL_MODE
+        MENUITEM SEPARATOR
+        MENUITEM "Set Languages",               ID_VIEW_SET_LANGUAGES
+        MENUITEM SEPARATOR
+        MENUITEM "Refresh List",                ID_VIEW_REFRESH_LIST
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "About Prose",                 ID_HELP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_PROSE               ICON                    "icon1.ico"
+
+IDI_SMALL               ICON                    "ico00001.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_EDIT                BITMAP                  "Buttons\\bmp00001.bmp"
+
+IDB_DROP                BITMAP                  "Buttons\\delete.bmp"
+
+IDB_ADD                 BITMAP                  "buttons\\bitmap1.bmp"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_TEXT_ITEM DIALOGEX 0, 0, 333, 161
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Text Item"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Text ID",IDC_STATIC,7,7,25,8
+    EDITTEXT        IDC_TEXT_ITEM_ID,7,18,319,14,ES_UPPERCASE | ES_AUTOHSCROLL
+    CONTROL         "c++ Resource Defined Item ID",IDC_TEXT_ITEM_RID,"Button",BS_AUTORADIOBUTTON,53,40,115,10
+    CONTROL         "Prose Text ID",IDC_TEXT_ITEM_PID,"Button",BS_AUTORADIOBUTTON,175,40,60,10
+    LTEXT           "Text String",IDC_STATIC,7,52,36,8
+    EDITTEXT        IDC_TEXT_ITEM_TEXT,7,63,319,70,ES_MULTILINE | ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,112,140,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,170,140,50,14
+END
+
+IDD_TEXT_DUAL DIALOGEX 0, 0, 335, 244
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Text Item"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,117,223,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,176,223,50,14
+    LTEXT           "Text ID",IDC_STATIC,7,7,25,8
+    EDITTEXT        IDC_TEXT_ITEM_ID,7,18,319,14,ES_UPPERCASE | ES_AUTOHSCROLL
+    CONTROL         "c++ Resource Defined Item ID",IDC_TEXT_ITEM_RID,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,53,40,115,10
+    CONTROL         "Prose Text ID",IDC_TEXT_ITEM_PID,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,175,40,60,10
+    LTEXT           "Text String 1",IDC_STATIC_LANG1,7,52,42,8
+    EDITTEXT        IDC_TEXT_ITEM_TEXT_1,7,63,319,70,ES_MULTILINE | ES_AUTOHSCROLL
+    LTEXT           "Text String 2",IDC_STATIC_LANG2,7,135,42,8
+    EDITTEXT        IDC_TEXT_ITEM_TEXT_2,7,145,319,70,ES_MULTILINE | ES_AUTOHSCROLL
+END
+
+IDD_LANGUAGE_SET DIALOGEX 0, 0, 215, 97
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Set Languages"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,52,76,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,113,76,50,14
+    LTEXT           "Known Language",IDC_STATIC,7,7,56,8
+    COMBOBOX        IDC_SET_LANGUAGES_KNOWN,7,18,201,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Target Language",IDC_STATIC,7,39,56,8
+    COMBOBOX        IDC_SET_LANGUAGES_TARGET,7,50,201,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "",IDC_STATIC,7,82,8,8
+END
+
+IDD_LANGUAGE DIALOGEX 0, 0, 309, 81
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Language"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,103,60,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,157,60,50,14
+    LTEXT           "Language Name",IDC_STATIC,7,7,52,8
+    EDITTEXT        IDC_LANGUAGE_EDIT,7,18,295,14,ES_AUTOHSCROLL
+    CONTROL         "Left Hand Alignment",IDC_LANGUAGE_LEFT,"Button",BS_AUTORADIOBUTTON,54,39,81,10
+    CONTROL         "Right Hand Alignment",IDC_LANGUAGE_RIGHT,"Button",BS_AUTORADIOBUTTON,151,39,85,10
+END
+
+IDD_LANGUAGE_CHOOSE DIALOGEX 0, 0, 309, 170
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Choose Language"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,101,149,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,155,149,50,14
+    CONTROL         "",IDC_LANGUAGE_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,295,131
+END
+
+IDD_TEXT_TYPE DIALOGEX 0, 0, 213, 57
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Change Type of All Selected Items"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,56,36,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,110,36,50,14
+    CONTROL         "c++ Resource Defined Item ID",IDC_TEXT_ITEM_RID,"Button",BS_AUTORADIOBUTTON,15,15,115,10
+    CONTROL         "Prose Text ID",IDC_TEXT_ITEM_PID,"Button",BS_AUTORADIOBUTTON,137,15,60,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_TEXT_ITEM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 326
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_TEXT_DUAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 328
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 237
+    END
+
+    IDD_LANGUAGE_SET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 208
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 90
+    END
+
+    IDD_LANGUAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 74
+    END
+
+    IDD_LANGUAGE_CHOOSE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_TEXT_TYPE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 206
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 50
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_TEXT_ITEM AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_TEXT_DUAL AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_LANGUAGE_SET AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_LANGUAGE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_LANGUAGE_CHOOSE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_TEXT_TYPE AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
