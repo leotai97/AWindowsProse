@@ -25,7 +25,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
  if (App->Init(hInstance, nCmdShow, L"Prose", L"Windows Program Prose")==true)
   {
-   ret = App->GetMain()->Loop(IDC_PROSE);
+   ret = App->GetMain()->Loop(IDR_PROSE);
    App->Shutdown();
   }
 

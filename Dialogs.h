@@ -15,6 +15,8 @@ class TextItemDlg : public ADialog
  virtual void OnInitDialog();
  virtual WMR OnCommand(int id, HWND hChild);
 
+ bool TestKey(String const &key);
+
  ProseLanguage m_Language;
  ProseTextItem m_Item;
 

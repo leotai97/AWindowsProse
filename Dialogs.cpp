@@ -62,6 +62,11 @@ WMR TextItemDlg::OnCommand(int child, HWND hChild)
  if (child == IDOK)
   {
    key = GetItemText(IDC_TEXT_ITEM_ID).Trim();
+   if (TestKey(key) == false)
+    {
+     App->Response(L"Text ID must contain only text, numbers or an underline");
+     return ret;
+    }
    m_Text = GetItemText(IDC_TEXT_ITEM_TEXT).Trim();
    if (GetCheckState(IDC_TEXT_ITEM_RID) == true)
      m_ItemType = ProseTextItem::TextItemType::ResourceID;
@@ -72,7 +77,7 @@ WMR TextItemDlg::OnCommand(int child, HWND hChild)
      App->Response(L"Text ID cannot be blank");
      return ret;
     }
-   if (m_Item.Key.Length() == 0)
+   if (m_Item.Key.Length() == 0) // it's a new entry
     {
      for(const auto &sid : App->Prose.Keys)
       {
@@ -88,8 +93,28 @@ WMR TextItemDlg::OnCommand(int child, HWND hChild)
     }
    else
     {
-     App->Prose.Items[m_Item.Key].ItemType = m_ItemType;
-     App->Prose.Items[m_Item.Key].LanguageText[App->English.ID] = m_Text;
+     if ( key != m_Item.Key)
+      {
+       for(const auto &sid : App->Prose.Keys)
+        {
+         if (sid.first == key)
+          {
+           msg = L"Text ID \"";
+           msg += key;
+           msg += L"Already Exists";
+           App->Response(msg);
+           return ret;
+          }
+        }
+       App->Prose.Items.erase(m_Item.Key);
+       m_Item.Key = key;
+       App->Prose.Items.insert(std::pair<String, ProseTextItem>(m_Item.Key, m_Item));
+      }
+     else
+      {
+       App->Prose.Items[m_Item.Key].ItemType = m_ItemType;
+       App->Prose.Items[m_Item.Key].LanguageText[App->English.ID] = m_Text;
+      }
     }
    m_Key = key;
    Close(DialogResult::OK);
@@ -99,6 +124,26 @@ WMR TextItemDlg::OnCommand(int child, HWND hChild)
    Close(DialogResult::Cancel);
 
  return ret;
+}
+
+bool TextItemDlg::TestKey(String const &key)
+{
+ wchar_t chr;
+ bool good;
+ int i;
+
+ for (i=0; i<key.Length(); i++)
+  {
+   good = false;
+   chr = key[i];
+   if (chr >= L'A' && chr <= L'Z')  good = true;
+   if (chr >= L'0' && chr <= L'9')  good = true;
+   if (chr == L'_' ) good = true;
+   if (good == false) 
+      return false;
+  }
+
+ return true;
 }
 
 // ////////////////////////////////////////////////////////////////////////

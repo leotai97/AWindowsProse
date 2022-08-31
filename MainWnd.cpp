@@ -478,7 +478,7 @@ void MainWnd::mnuEditEdit()
   }
  if (r == DialogResult::OK)
   {
-   item = App->Prose.Items[key];  // get updated copy of item
+   item = App->Prose.Items[dlgSing.GetKey()];  // get updated copy of item, key might have changed
    m_List.SetItemText(ndx, 0, item.Key);
    if (item.ItemType == ProseTextItem::TextItemType::ResourceID)
      txt = L"Resource ID";

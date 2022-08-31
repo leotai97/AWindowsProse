@@ -47,49 +47,6 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 //
-// Menu
-//
-
-IDC_PROSE MENU
-BEGIN
-    POPUP "&File"
-    BEGIN
-        MENUITEM "New Project",                 ID_FILE_NEW
-        MENUITEM "Open Project",                ID_FILE_OPEN
-        MENUITEM "Save Project",                ID_FILE_SAVE
-        MENUITEM SEPARATOR
-        MENUITEM "Exit",                        ID_FILE_EXIT
-    END
-    POPUP "Edit"
-    BEGIN
-        MENUITEM "Add Text Item",               IDB_ADD
-        MENUITEM "Edit Text Item",              IDB_EDIT
-        MENUITEM "Drop Text Item",              IDB_DROP
-        MENUITEM SEPARATOR
-        MENUITEM "Add Language",                ID_EDIT_LANG_ADD
-        MENUITEM "Remove Language",             ID_EDIT_LANG_DROP
-        MENUITEM SEPARATOR
-        MENUITEM "Paste Resource ID List",      ID_EDIT_PASTE
-        MENUITEM "Extract Text From .RC File",  ID_EDIT_EXTRACT
-    END
-    POPUP "&View"
-    BEGIN
-        MENUITEM "Single Language Mode",        ID_VIEW_SINGLE_MODE
-        MENUITEM "Dual Language Mode",          ID_VIEW_DUAL_MODE
-        MENUITEM SEPARATOR
-        MENUITEM "Set Languages",               ID_VIEW_SET_LANGUAGES
-        MENUITEM SEPARATOR
-        MENUITEM "Refresh List",                ID_VIEW_REFRESH_LIST
-    END
-    POPUP "&Help"
-    BEGIN
-        MENUITEM "About Prose",                 ID_HELP_ABOUT
-    END
-END
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
 // Icon
 //
 
@@ -291,6 +248,13 @@ IDD_TEXT_TYPE AFX_DIALOG_LAYOUT
 BEGIN
     0
 END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
 
 #endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
