@@ -324,6 +324,8 @@ WMR SetLanguageDlg::OnCommand(int child, HWND hChild)
   {
    Close(DialogResult::Cancel);
   }
+
+ return ret;
 }
 
 ///////////////////////////////////////////////////////
@@ -411,6 +413,8 @@ WMR LanguageDlg::OnCommand(int child, HWND hChild)
   {
    Close(DialogResult::Cancel);
   }
+
+ return ret;
 }
 
 ////////////////////////////////////////////////////

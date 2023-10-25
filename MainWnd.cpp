@@ -59,13 +59,13 @@ bool MainWnd::Create(String const &wndcls, int nCmdShow)
 
  m_Status.AddAutoPane(StatusBarPane::Content::Text);
  m_Status.AddFixedPane(StatusBarPane::Content::Progress, 190);
- m_Status.Create(this);
+ m_Status.CreateSB(this);
 
  OnSize();
 
  LoadMainMenu();
 
- SetMenu(m_Menu);
+ SetPopUpMenu(m_Menu);
 
  return true;
 }
@@ -141,7 +141,7 @@ void MainWnd::OnSize()
   {
    cs = ClientSize();
    m_ToolBar.SetRect(Rect(0,0, cs.Width, m_ToolBar.Height()));
-   m_Status.OnSize(Rect(0,0, cs.Width,cs.Height));
+   m_Status.OnSize();
    r = Rect(0, m_ToolBar.Height(), cs.Width, cs.Height - (m_ToolBar.Height() + m_Status.Height()));
    m_List.SetRect(r);
   }
